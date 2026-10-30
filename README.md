@@ -16,6 +16,7 @@
 
 | Family | Purpose | Read first |
 | --- | --- | --- |
+| [cohesive-techspression](uiuxs/cohesive-techspression/) | Layered workspaces, task-adjacent expert controls and broad semantic intent/feel macros | [UI/UX baseline](uiuxs/cohesive-techspression/cohesive-techspression-uiux-spec.md) · [tailoring](uiuxs/cohesive-techspression/cohesive-techspression-spec-tailoring.md) |
 | [mzpaint](uiuxs/mzpaint/) | Precision/scientific and expressive/artistic glyph and cell-grid editing | [UI/UX baseline](uiuxs/mzpaint/mzpaint-uiux-spec.md) · [tailoring](uiuxs/mzpaint/mzpaint-spec-tailoring.md) |
 | [parametermaxing](uiuxs/parametermaxing/) | Dense expert controls, numerical ranges, presets, safety bounds and inspectability | [UI/UX baseline](uiuxs/parametermaxing/parametermaxing-uiux-spec.md) · [tailoring](uiuxs/parametermaxing/parametermaxing-spec-tailoring.md) |
 | [tuiuiux](uiuxs/tuiuiux/) | Tile-native GUI and terminal UI requirements and implementation patterns | [UI/UX baseline](uiuxs/tuiuiux/tile-native-gui-tui-uiux-spec.md) · [tailoring](uiuxs/tuiuiux/tile-native-gui-tui-spec-tailoring.md) |
@@ -60,6 +61,7 @@ non-normative research, historical precedents, examples and hypotheses
 ```text
 specdocz/
   uiuxs/
+    cohesive-techspression/
     mzpaint/
     parametermaxing/
     tuiuiux/
