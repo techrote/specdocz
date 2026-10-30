@@ -63,10 +63,10 @@ def check_study(entry: dict[str, str]) -> None:
         rel = Path(entry[key])
         require(not rel.is_absolute() and ".." not in rel.parts,
                 f"{study_id}: unsafe {key}: {entry[key]}")
-        f = (RESEARCH / rel).resolve()
-        require(f.is_relative_to(RESEARCH) and f.is_file(),
+        f = (ROOT / rel).resolve()
+        require(f.is_relative_to(ROOT) and f.is_file(),
                 f"{study_id}: missing {key}: {entry[key]}")
-    study = (RESEARCH / entry["path"]).read_text(encoding="utf-8")
+    study = (ROOT / entry["path"]).read_text(encoding="utf-8")
     require(study.startswith("---\n") and "\n---\n" in study[4:],
             f"{study_id}: missing document front matter")
     front = study.split("---", 2)[1]
@@ -79,7 +79,7 @@ def check_study(entry: dict[str, str]) -> None:
     # The first imported study retains its historical front matter and complete
     # original source register. The detached source listing is a checked extract.
     if study_id == "RESEARCH-ZPL-001":
-        source_file = (RESEARCH / "zero-player-level-design/sources.md").read_text(encoding="utf-8")
+        source_file = (ROOT / "gametypes/zeroplayerlevel/sources.md").read_text(encoding="utf-8")
         annotations = re.findall(r"(?m)^- \*\*\[S\d{2}\].*$", study)
         copied = re.findall(r"(?m)^- \*\*\[S\d{2}\].*$", source_file)
         require(len(annotations) == 21, "RESEARCH-ZPL-001: expected 21 annotated sources")
@@ -87,7 +87,7 @@ def check_study(entry: dict[str, str]) -> None:
         source_ids = [re.search(r"\[S\d{2}\]", line).group(0) for line in annotations]
         require(len(set(source_ids)) == len(source_ids), "RESEARCH-ZPL-001: duplicate source ID")
         patterns = set(re.findall(r"\bZP-P\d{2}\b", study))
-        pattern_index = (RESEARCH / "zero-player-level-design/patterns.md").read_text(encoding="utf-8")
+        pattern_index = (ROOT / "gametypes/zeroplayerlevel/patterns.md").read_text(encoding="utf-8")
         require(len(patterns) == 11, "RESEARCH-ZPL-001: expected 11 patterns")
         require(patterns == set(re.findall(r"\bZP-P\d{2}\b", pattern_index)),
                 "RESEARCH-ZPL-001: pattern index diverged from canonical study")
@@ -99,7 +99,13 @@ def main() -> int:
         studies = parse_catalog(catalog)
         for entry in studies:
             check_study(entry)
-        markdown = [ROOT / "README.md", *RESEARCH.rglob("*.md")]
+        for family in ("mzpaint", "parametermaxing", "tuiuiux"):
+            require((ROOT / "uiuxs" / family).is_dir(), f"uiuxs/{family} missing")
+            require(not (ROOT / family).exists(), f"obsolete root directory: {family}")
+        require((ROOT / "gametypes/zeroplayerlevel").is_dir(), "game study missing")
+        require(not (RESEARCH / "zero-player-level-design").exists(),
+                "obsolete research/zero-player-level-design folder")
+        markdown = sorted(ROOT.rglob("*.md"))
         for path in markdown:
             require(path.is_file(), f"missing markdown document: {path}")
         checked = sum(check_relative_links(path) for path in markdown)
