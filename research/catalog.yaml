@@ -1,0 +1,27 @@
+# Stable IDs and paths for non-normative research; schema version 1.
+# Project specifications remain authoritative. Status is not a peer-review claim.
+schema_version: 1
+studies:
+  - id: RESEARCH-ZPL-001
+    title: Zero-Player Level Design
+    path: zero-player-level-design/metastudy.md
+    index: zero-player-level-design/README.md
+    document_class: narrative-evidence-synthesis
+    status: synthesis
+    normative: false
+    version: "1.0"
+    researched: "2026-10-30"
+    topics:
+      - game-design
+      - physics-simulation
+      - autonomous-demonstrations
+      - level-editors
+      - replay-qualification
+    applicable_to:
+      - game-engines
+      - web-demos
+      - level-editors
+      - interactive-physics-art
+    consumer_examples:
+      - techrote/cybersand
+    related_specs: []
