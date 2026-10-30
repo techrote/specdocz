@@ -185,9 +185,9 @@ Example:
 
 ```text
 Basis:
-- specdocz/tuiuiux/tile-native-gui-tui-uiux-spec.md @ <commit>
+- specdocz/uiuxs/tuiuiux/tile-native-gui-tui-uiux-spec.md @ <commit>
   — normative baseline
-- specdocz/tuiuiux/tile-native-gui-tui-implementation-spec.md @ <commit>
+- specdocz/uiuxs/tuiuiux/tile-native-gui-tui-implementation-spec.md @ <commit>
   — selectively incorporated pattern library
 - project architecture and safety requirements
   — authoritative where more specific
@@ -380,4 +380,4 @@ The resulting project specification should describe these behaviours directly. I
 
 Use the following as a compact instruction for an agent responsible for an active project:
 
-> **Create or update this project's GUI/TUI specification using `specdocz/tuiuiux/tile-native-gui-tui-uiux-spec.md` as the normative design baseline. First audit the project's current architecture, workflows, platforms, UI implementation, constraints, tests, and existing requirements. Pin and record the exact `specdocz` revision used. Review `tile-native-gui-tui-implementation-spec.md` as a pattern library rather than mandatory architecture. For each relevant pattern, decide whether to Adopt, Adapt, Reject, or Extend it according to the project's domain and existing architecture. Consult MDBM-referenced variants only when concrete examples or edge cases are helpful; do not inherit MDBM-specific behaviour by default. Integrate the resulting decisions into a self-contained project-specific UI/UX and implementation specification stored in the project repository. Record material deviations and rationale, define project-specific acceptance criteria, and distinguish required behaviour from current implementation/qualification status. The tailored project specification becomes authoritative for this project, subject to higher-priority project safety, functional, compatibility, and repository requirements. Future `specdocz` changes must be reviewed as explicit deltas rather than silently inherited.**
+> **Create or update this project's GUI/TUI specification using `specdocz/uiuxs/tuiuiux/tile-native-gui-tui-uiux-spec.md` as the normative design baseline. First audit the project's current architecture, workflows, platforms, UI implementation, constraints, tests, and existing requirements. Pin and record the exact `specdocz` revision used. Review `tile-native-gui-tui-implementation-spec.md` as a pattern library rather than mandatory architecture. For each relevant pattern, decide whether to Adopt, Adapt, Reject, or Extend it according to the project's domain and existing architecture. Consult MDBM-referenced variants only when concrete examples or edge cases are helpful; do not inherit MDBM-specific behaviour by default. Integrate the resulting decisions into a self-contained project-specific UI/UX and implementation specification stored in the project repository. Record material deviations and rationale, define project-specific acceptance criteria, and distinguish required behaviour from current implementation/qualification status. The tailored project specification becomes authoritative for this project, subject to higher-priority project safety, functional, compatibility, and repository requirements. Future `specdocz` changes must be reviewed as explicit deltas rather than silently inherited.**

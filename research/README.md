@@ -1,42 +1,25 @@
-# Research and evidence library
+# Research catalog and methodology
 
-This folder contains **non-normative** syntheses that explain what is documented, how strongly it is supported, what is still uncertain, and what may be worth implementing. These are references for agents and humans; they do not supersede a consuming project's requirements.
+This directory provides a **cross-category** catalog, reusable authoring template, and evidence-quality guidance. Studies live inside their subject folders (for example, [gametypes/zeroplayerlevel/](../gametypes/zeroplayerlevel/)), so the repository can grow without a second subject taxonomy hidden under `research/`.
 
-## Find a study
+## Discover a study
 
-The machine-readable entry point is [catalog.yaml](catalog.yaml); a study's `id` is stable across file revisions. Search `topics`, `applicable_to` and `title`, then open only the relevant study and annexes.
+[**catalog.yaml**](catalog.yaml) is the machine-readable registry. Its `path` and `index` fields are **relative to the repository root**; the stable `id` identifies a study independently of its location.
 
-| Study | ID | Primary document | Scope |
+| Study | ID | Canonical document | Subject |
 | --- | --- | --- | --- |
-| [Zero-Player Level Design](zero-player-level-design/README.md) | `RESEARCH-ZPL-001` | [metastudy.md](zero-player-level-design/metastudy.md) | Auto-Mario, DDA/PN/PF, physics choreography, deterministic replay and exhibition-style demos |
+| [Zero-Player Level Design](../gametypes/zeroplayerlevel/README.md) | `RESEARCH-ZPL-001` | [metastudy.md](../gametypes/zeroplayerlevel/metastudy.md) | [gametypes](../gametypes/) |
 
-## Classes and authority
+## Evidence and applicability
 
-- **Standards** (`../tuiuiux/`, `../mzpaint/`, `../parametermaxing/`): explicitly normative reusable contracts. They are tailored before adoption.
-- **Patterns**: possible architectures, techniques and verification recipes. Non-normative unless adopted.
-- **Research** (this directory): documented evidence, synthesis, candidate patterns, limitations and research gaps. Always non-normative by default.
+- **Research:** evidence, historical comparisons, limitations, hypotheses and candidate patterns. Non-normative by default.
+- **Implementation patterns:** suggested techniques and tests; adopt only with an explicit applicability decision.
+- **Standards:** reusable normative baselines, such as the [UI/UX specification families](../uiuxs/); tailored project contracts remain authoritative within their own project.
 
-Recommended precedence in a project:
+Evidence classifications should distinguish directly sourced claims, independent corroboration, synthesis/inference, recommendations and unresolved questions. A creator's account, a peer-reviewed study, journalistic coverage and a community post have different provenance; none alone constitutes a universal confidence score.
 
-```text
-project safety / scientific / functional / compatibility rules
-  > project-specific authoritative specification
-  > applicable reusable normative standard
-  > explicitly adopted/adapted implementation pattern
-  > research synthesis, examples, community observations
-```
+## Consuming research
 
-## Evidence markings
+Audit the target project first; locate relevant studies using the catalog; record the **exact specdocz commit SHA**, study ID/version/path and specific source identifiers. For each technique decide **Adopt / Adapt / Reject / Extend**. Produce project-local normative text, tests and deviation reasoning. Never interpret a future update to `main` as automatically amending a pinned project contract.
 
-Prefer primary sources. Clearly distinguish **direct evidence**, **corroboration**, **inference/synthesis**, **proposed engineering guidance**, and **open questions**. Evidence-source type (developer, academic, journalism, community) is **not a confidence score**. Do not claim tests, platform determinism, peer review or independent verification that have not occurred.
-
-## Consuming the library
-
-1. Audit live project state, active ownership, instructions, existing requirements and constraints.
-2. Identify the relevant research with `catalog.yaml`; read only scoped chapters/annexes.
-3. Record repo+exact commit SHA+document path, study ID/version and (when relevant) source URLs/date.
-4. Classify each candidate as **Adopt / Adapt / Reject / Extend**, with rationale and evidence level.
-5. Express adopted outcomes directly in the *project repository* as self-contained requirements and acceptance tests.
-6. Keep uncertainty and failure evidence visible. Research updates never silently rewrite an earlier project's pinned decisions.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for study creation, integrity checks and promotion. Use [the template](_templates/metastudy-template.md) for new syntheses.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for evidence, review and research-to-specification promotion. Start new studies from the [template](_templates/metastudy-template.md). Structural validation is not scholarly review or application qualification.

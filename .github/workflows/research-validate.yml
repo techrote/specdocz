@@ -5,12 +5,16 @@ on:
     paths:
       - 'README.md'
       - 'research/**'
+      - 'gametypes/**'
+      - 'uiuxs/**'
       - 'scripts/validate_research.py'
       - '.github/workflows/research-validate.yml'
   pull_request:
     paths:
       - 'README.md'
       - 'research/**'
+      - 'gametypes/**'
+      - 'uiuxs/**'
       - 'scripts/validate_research.py'
       - '.github/workflows/research-validate.yml'
   workflow_dispatch:

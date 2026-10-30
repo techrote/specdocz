@@ -1,11 +1,11 @@
-# Stable IDs and paths for non-normative research; schema version 1.
+# Stable IDs and repository-root-relative paths for non-normative research; schema version 1.
 # Project specifications remain authoritative. Status is not a peer-review claim.
 schema_version: 1
 studies:
   - id: RESEARCH-ZPL-001
     title: Zero-Player Level Design
-    path: zero-player-level-design/metastudy.md
-    index: zero-player-level-design/README.md
+    path: gametypes/zeroplayerlevel/metastudy.md
+    index: gametypes/zeroplayerlevel/README.md
     document_class: narrative-evidence-synthesis
     status: synthesis
     normative: false
