@@ -2,9 +2,9 @@
 
 ## Creating a research study
 
-Copy [_templates/metastudy-template.md](_templates/metastudy-template.md) into a semantic subfolder. Add an entry to [catalog.yaml](catalog.yaml), a brief subfolder README, and a bibliography with stable source IDs. Place full original reference material in links/citations, not as copied copyrighted articles.
+Copy [_templates/metastudy-template.md](_templates/metastudy-template.md) into the appropriate subject-category folder (for example, [gametypes/zeroplayerlevel](../gametypes/zeroplayerlevel/)). Record repository-root-relative file paths in [catalog.yaml](catalog.yaml), add a brief study README, and maintain a bibliography with stable source IDs. Keep the cross-category catalog, templates and process guidance under `research/`. Place full original reference material in links/citations, not as copied copyrighted articles.
 
-Choose a stable `RESEARCH-<DOMAIN>-NNN` ID. The *catalog* is the registry of identity and paths; an older imported document's original front matter may be preserved. Use the template's metadata for new studies.
+Choose a stable `RESEARCH-<DOMAIN>-NNN` ID. The catalog's `path` and `index` are relative to repository root, not this folder. The *catalog* is the registry of identity and paths; an older imported document's original front matter may be preserved. Use the template's metadata for new studies.
 
 ## Evidence and review discipline
 
