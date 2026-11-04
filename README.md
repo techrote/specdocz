@@ -10,6 +10,7 @@
 | --- | --- | --- |
 | **User interfaces** | [uiuxs/](uiuxs/) | GUI/TUI design, cell-grid editing, and expert parameter-control specifications |
 | **Game types** | [gametypes/](gametypes/) | Game-play modes, mechanics, and related design research |
+| **Development workflows** | [development/](development/) | In-engine documentation patterns: Gyms, Zoos, Museums |
 | **Research registry** | [research/](research/) | Study catalog, authoring template, evidence quality and promotion rules |
 
 ### UI/UX specification families
@@ -23,6 +24,10 @@
 | [tuiuiux](uiuxs/tuiuiux/) | Tile-native GUI and terminal UI requirements and implementation patterns | [UI/UX baseline](uiuxs/tuiuiux/tile-native-gui-tui-uiux-spec.md) · [tailoring](uiuxs/tuiuiux/tile-native-gui-tui-spec-tailoring.md) |
 
 Each family distinguishes standalone normative baselines, advisory implementation approaches, reference-backed variants and project-tailoring procedures. The original source project's architecture is **not** automatically mandatory elsewhere.
+
+### Development workflow references
+
+The [development guides](development/) distinguish three complementary in-engine documentation patterns: [Gyms](development/gyms.md) for hands-on mechanic/metrics testing, [Zoos](development/zoos.md) for asset discovery and comparison, and [Museums](development/museums.md) for functional system demonstrations. These are **non-normative references** based on Robin-Yann Storm's talk, with proposed implementation practices clearly distinguished from the source.
 
 ### Game types and research
 
@@ -69,6 +74,10 @@ specdocz/
     tuiuiux/
   gametypes/
     zeroplayerlevel/
+  development/
+    gyms.md
+    zoos.md
+    museums.md
   research/
     catalog.yaml        # study IDs and repository-root-relative paths
     _templates/
